@@ -1,4 +1,4 @@
-# ARTISAN — Fashion Meets Art
+# SEWN FOR THE STAGE — Where Fashion Meets Storytelling
 
 A static website exploring the intersection of fashion and art history.
 
