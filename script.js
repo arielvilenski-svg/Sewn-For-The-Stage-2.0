@@ -42,3 +42,28 @@ if (lightbox && lightboxImg) {
     }
   });
 }
+
+// HAMBURGER MENU
+const hamburger = document.querySelector('.hamburger');
+const nav = document.querySelector('nav');
+
+if (hamburger && nav) {
+  hamburger.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('nav-open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (nav.classList.contains('nav-open') && !nav.contains(e.target)) {
+      nav.classList.remove('nav-open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('nav-open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
